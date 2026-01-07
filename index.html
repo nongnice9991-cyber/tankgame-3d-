@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tank Game 3D - สงครามรถถังระห่ำโลก [Advanced Ops]</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Black+Ops+One&family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="canvas-bg"></canvas>
+
+    <div class="scanlines"></div>
+    <div class="crt-overlay"></div>
+
+    <div class="cursor-box" id="cursor">
+        <div class="cursor-center"></div>
+        <div class="cursor-cross-h"></div>
+        <div class="cursor-cross-v"></div>
+        <div class="cursor-ring-inner"></div>
+        <div class="cursor-ring-outer"></div>
+        <div class="cursor-bracket bracket-top"></div>
+        <div class="cursor-bracket bracket-bottom"></div>
+    </div>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-panel hover-trigger">
+                <h1>Tank Game 3D</h1>
+                
+                <div class="hero-slogan">
+                    <span id="typewriter-text"></span><span class="typewriter-cursor"></span>
+                </div>
+                
+                <a href="https://www.mediafire.com/file/9ymih9t97prb5m1/Tank_Game_3D.rar/file" target="_blank" class="btn-download hover-trigger">
+                    [ ดาวน์โหลดเกม ]
+                </a>
+                
+                <div class="system-status">
+                    สถานะระบบ: ออนไลน์ | เวอร์ชั่น: 1.0.0 | ขนาด: 34.63MB
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="about-section">
+        <div class="container">
+            <div style="text-align: center;">
+                <h2>สรุปภารกิจ</h2>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        <strong>TANK GAME 3D</strong> สงครามยานเกราะเต็มรูปแบบ! เลือกสรรรถถังจาก 4 หน่วยรบ (4 สี) พร้อมเข้าสู่พื้นที่สังหาร (KILL ZONE) ที่ไม่มีที่ว่างสำหรับผู้แพ้
+                    </p>
+                    <p>
+                        รองรับการต่อสู้แบบ <strong>PVP (1 ต่อ 1)</strong> ดวลเดือดกับเพื่อน หรือท้าทายขีดจำกัดด้วยระบบ <strong>AI Bot</strong> อัจฉริยะ เพื่อจำลองสถานการณ์รบจริง
+                    </p>
+                    <p style="border-color: var(--danger-red); color: #ffcccc;">
+                        <span style="color:var(--danger-red); font-weight:bold;">:: เป้าหมายหลัก ::</span> ทำลายเป้าหมายและสะสมชัยชนะให้ครบ 5 Wins เพื่อครองความเป็นเจ้าสนามรบ!
+                    </p>
+                </div>
+                
+                <div class="features-wrapper">
+                    <ul class="features-list">
+                        <li class="feature-item hover-trigger">
+                            <h3>[01] 4 Tanks Selection</h3>
+                            <p>อิสระในการเลือกสีรถถังตามสไตล์คุณ พร้อมระบบ UI ที่เข้าใจง่าย</p>
+                        </li>
+                        <li class="feature-item hover-trigger">
+                            <h3>[02] Intelligent AI</h3>
+                            <p>ระบบบอทอัจฉริยะที่ช่วยเพิ่มความท้าทาย ฝึกฝนทักษะการหลบหลีก</p>
+                        </li>
+                        <li class="feature-item hover-trigger">
+                            <h3>[03] The 5-Win Battle</h3>
+                            <p>ระบบนับแต้มตัดสินผลที่แม่นยำ ภารกิจชิง 5 แต้มเพื่อชัยชนะ</p>
+                        </li>
+                        <li class="feature-item hover-trigger">
+                            <h3>[04] SFX & Visuals</h3>
+                            <p>จัดเต็มเอฟเฟกต์ระเบิดตูมตามและเสียงปืนสมจริง เพิ่มอรรถรสในการรบ</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="controls-section">
+        <div class="container">
+            <div style="text-align: center;">
+                <h2>ระบบควบคุม</h2>
+            </div>
+            
+            <div class="controls-container">
+                <div class="player-card hover-trigger">
+                    <div class="player-title">หน่วยรบ 01</div>
+                    <div class="keys-layout">
+                        <div>
+                            <div class="key-row">
+                                <div class="key">W</div>
+                            </div>
+                            <div class="key-row">
+                                <div class="key">A</div>
+                                <div class="key">S</div>
+                                <div class="key">D</div>
+                            </div>
+                            <div class="action-label">การเคลื่อนที่</div>
+                        </div>
+                        
+                        <div style="height:1px; background:#333; margin:20px 0;"></div>
+
+                        <div>
+                            <div class="key wide">SPACE</div>
+                            <div class="action-label">ยิงอาวุธหลัก</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="player-card hover-trigger">
+                    <div class="player-title">หน่วยรบ 02</div>
+                    <div class="keys-layout">
+                        <div>
+                            <div class="key-row">
+                                <div class="key">↑</div>
+                            </div>
+                            <div class="key-row">
+                                <div class="key">←</div>
+                                <div class="key">↓</div>
+                                <div class="key">→</div>
+                            </div>
+                            <div class="action-label">การเคลื่อนที่</div>
+                        </div>
+
+                        <div style="height:1px; background:#333; margin:20px 0;"></div>
+
+                        <div>
+                            <div class="key wide">ENTER</div>
+                            <div class="action-label">ยิงอาวุธหลัก</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <div style="text-align: center;">
+                <h2>ทีมผู้พัฒนา</h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-member hover-trigger">
+                    <div class="avatar-box">
+                        <img src="https://api.dicebear.com/9.x/adventurer/svg?seed=Felix&backgroundColor=transparent" alt="ชัยณรงค์" class="team-avatar">
+                    </div>
+                    <h3 class="team-name">นายชัยณรงค์ ชัยสงค์</h3>
+                    <p class="team-role">รหัสนักศึกษา: 6610070</p>
+                </div>
+
+                <div class="team-member hover-trigger">
+                    <div class="avatar-box">
+                        <img src="https://api.dicebear.com/9.x/adventurer/svg?seed=Ryan&backgroundColor=transparent" alt="สุภากร" class="team-avatar">
+                    </div>
+                    <h3 class="team-name">นายสุภากร บัวชัยชิต</h3>
+                    <p class="team-role">รหัสนักศึกษา: 6610076</p>
+                </div>
+
+                <div class="team-member hover-trigger">
+                    <div class="avatar-box">
+                        <img src="https://api.dicebear.com/9.x/adventurer/svg?seed=Mason&backgroundColor=transparent" alt="กิตติพงศ์" class="team-avatar">
+                    </div>
+                    <h3 class="team-name">นายกิตติพงศ์ อุดมลาภ</h3>
+                    <p class="team-role">รหัสนักศึกษา: 6610067</p>
+                </div>
+
+                 <div class="team-member hover-trigger">
+                    <div class="avatar-box">
+                        <img src="https://api.dicebear.com/9.x/adventurer/svg?seed=Nolan&backgroundColor=transparent" alt="เฉลิมชัย" class="team-avatar">
+                    </div>
+                    <h3 class="team-name">นายเฉลิมชัย คำแหงพล</h3>
+                    <p class="team-role">รหัสนักศึกษา: 6610104</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Tank Game 3D จัดทำขึ้นเพื่อการศึกษาและการเรียนรู้ Unity</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
